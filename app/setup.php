@@ -63,9 +63,9 @@ add_action('after_setup_theme', function () {
      * Register the navigation menus.
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
-    register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
-    ]);
+    // register_nav_menus([
+    //     'primary_navigation' => __('Primary Navigation', 'sage')
+    // ]);
 
     /**
      * Register the editor color palette.
@@ -179,19 +179,14 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3>',
+        'before_widget' => '<small>',
+        'after_widget' => '</small>',
+        'before_title' => '<h3 class="d-none">',
         'after_title' => '</h3>'
     ];
 
     register_sidebar([
-        'name' => __('Primary', 'sage'),
-        'id' => 'sidebar-primary'
-    ] + $config);
-
-    register_sidebar([
-        'name' => __('Footer', 'sage'),
-        'id' => 'sidebar-footer'
+        'name' => __('CopyRight', 'sage'),
+        'id' => 'copyright'
     ] + $config);
 });
