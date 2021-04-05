@@ -1,8 +1,8 @@
-<article @php(post_class())>
+<article class="container">
   <header>
-    <h1 class="entry-title">
+    <h4 class="entry-title">
       {!! $title !!}
-    </h1>
+    </h4>
 
     @include('partials/entry-meta')
   </header>

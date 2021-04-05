@@ -1,10 +1,10 @@
-<article @php(post_class())>
+<article class="container">
   <header>
-    <h2 class="entry-title">
+    <h4 class="entry-title">
       <a href="{{ get_permalink() }}">
         {!! $title !!}
       </a>
-    </h2>
+    </h4>
 
     @include('partials/entry-meta')
   </header>
