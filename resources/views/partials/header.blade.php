@@ -25,9 +25,9 @@
           @endif
           
           @if ( get_theme_mod( 'logo_small_setting_id' ) )                
-            <source media="(min-width: 768px)" srcset="{{ wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) }}" type="image/jpeg">
+            <source media="(min-width: 576px)" srcset="{{ wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) }}" type="image/jpeg">
           @else
-            <source media="(min-width: 768px)" srcset="{{ get_stylesheet_directory_uri() }}/resources/images/logo@2x.png" type="image/jpeg">
+            <source media="(min-width: 576px)" srcset="{{ get_stylesheet_directory_uri() }}/resources/images/logo@2x.png" type="image/jpeg">
           @endif
           
           @if ( get_theme_mod( 'logo_xsmall_setting_id' ) )                
@@ -136,7 +136,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
-        <form action="index.html" method="GET">
+        <form action="/" method="GET">
           <div class="input-group mb-0">
             <input name="s" type="search" class="form-control" placeholder="{{ __( 'Key Word', 'sage' ) }}" aria-label="{{ __( 'SEARCH', 'sage' ) }}" aria-describedby="button-search">
             <button class="btn btn-outline-secondary" type="submit" id="button-search">{{ __( 'SEARCH', 'sage' ) }}</button>

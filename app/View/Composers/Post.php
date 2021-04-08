@@ -26,7 +26,41 @@ class Post extends Composer
     {
         return [
             'title' => $this->title(),
+            'view' => $this->postViewCount()
         ];
+    }
+
+    public function postViewCount() {
+        $post_view_count = get_post_meta( get_the_ID(), 'post_view_count', true );
+        
+        if( ! $post_view_count ) {
+            return 0;
+        }
+
+        $value = $this->formatKMG( $post_view_count );
+
+        return '<i class="icofont-eye-alt"></i> ' . $value;
+    }
+
+    public function formatKMG( int $number ) {
+        $number_format = number_format_i18n( $number );
+        $exploded = explode( ',', $number_format );
+        $count = count( $exploded );
+
+        switch ( $count ) {
+            case 2:
+                $value = number_format_i18n( $number/1000, 1 ) . __( 'K', 'sage' );
+                break;
+            case 3:
+                $value = number_format_i18n( $number/1000000, 1 ) . __( 'M', 'sage' );
+                break;
+            case 4:
+                $value = number_format_i18n( $number/1000000000, 1 ) . __( 'G', 'sage' );
+                break;
+            default:
+                $value = $number;
+        }
+        return $value;
     }
 
     /**
@@ -48,9 +82,14 @@ class Post extends Composer
             return __('Latest Posts', 'sage');
         }
 
-        if (is_archive()) {
-            return get_the_archive_title();
+        if (is_author()) {
+            return get_queried_object()->display_name;
         }
+        
+        if (is_archive()) {
+            return get_queried_object()->name;
+        }
+        
 
         if (is_search()) {
             /* translators: %s is replaced with the search query */

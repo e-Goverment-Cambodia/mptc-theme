@@ -7,15 +7,18 @@
     <x-alert type="warning">
       {!! __('Sorry, no results were found.', 'sage') !!}
     </x-alert>
-
     {!! get_search_form(false) !!}
   @endif
 
-  @while(have_posts()) @php(the_post())
-    @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-  @endwhile
+  <div class="container mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+    @while(have_posts()) @php(the_post())
+      @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+    @endwhile
+  </div>
 
-  {!! get_the_posts_navigation() !!}
+  <div class="container">
+    @include('partials.paginate-link')
+  </div>
 @endsection
 
 @section('sidebar')

@@ -46,4 +46,30 @@ class BaseController
         }
         return false;
     }
+
+    public static function getTheTermList( int $post_id, array $taxonomy, string $before = '', string $sep = '', string $after = '' ) {
+
+        $terms = wp_get_post_terms( $post_id, $taxonomy );
+ 
+        if ( is_wp_error( $terms ) ) {
+            return $terms;
+        }
+    
+        if ( empty( $terms ) ) {
+            return false;
+        }
+        
+        $links = array();
+    
+        foreach ( $terms as $term ) {
+            $link = get_term_link( $term->term_id, $term->taxonomy );
+            if ( is_wp_error( $link ) ) {
+                return $link;
+            }
+            $links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+        }
+    
+        return $before . implode( $sep, $links ) . $after;
+    }
+
 }

@@ -1,7 +1,3 @@
-<footer class="content-info">
-  @php(dynamic_sidebar('sidebar-footer'))
-</footer>
-
 <section class="bg-gray-100">
   <footer class="container">
     <div class="d-sm-flex justify-content-sm-between align-items-center p-2 p-sm-2 p-md-3">
@@ -75,3 +71,5 @@
     </div>
   </footer>
 </section>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5094a6d148768b69"></script>

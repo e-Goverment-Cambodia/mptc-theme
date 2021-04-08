@@ -1,19 +1,22 @@
-<article class="container">
-  <header>
-    <h4 class="entry-title">
-      {!! $title !!}
-    </h4>
-
+<article class="container mt-2">
+  <header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+    @include('partials/term-list')
+    <div class="block-title mb-1 mb-sm-2">
+      <h2>{!! $title !!}</h2>
+    </div>
     @include('partials/entry-meta')
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_inline_share_toolbox_vjl2 mb-2 mb-md-4"></div>
   </header>
 
-  <div class="entry-content">
+  @include('partials.pdf')
+
+  <div class="entry-content mb-1 mb-sm-2 mb-md-3 mb-lg-4">
     @php(the_content())
   </div>
 
-  <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-  </footer>
-
-  @php(comments_template())
+  <div class="block-title mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+    <h2>{{ __("Related Posts","sage") }}</h2>
+  </div>
+  @include('partials.related-posts')
 </article>
