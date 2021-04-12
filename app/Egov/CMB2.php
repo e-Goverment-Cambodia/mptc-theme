@@ -29,7 +29,7 @@ class CMB2 extends BaseController
         $cmb->add_field([
             'name'      => 'Display Template',
             'desc'      => 'Choose the archive lists as template above.',
-            'id'        => $prefix . 'category_blog',
+            'id'        => $prefix . 'category_template',
             'type'      => 'radio_inline',
             'options'	=> [
                 'default'	=> __( 'Default', 'sage' ), 

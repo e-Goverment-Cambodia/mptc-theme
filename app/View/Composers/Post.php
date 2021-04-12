@@ -74,13 +74,13 @@ class Post extends Composer
             return get_the_title();
         }
 
-        if (is_home()) {
-            if ($home = get_option('page_for_posts', true)) {
-                return get_the_title($home);
-            }
+        // if (is_home()) {
+        //     if ($home = get_option('page_for_posts', true)) {
+        //         return get_the_title($home);
+        //     }
 
-            return __('Latest Posts', 'sage');
-        }
+        //     return __('Latest Posts', 'sage');
+        // }
 
         if (is_author()) {
             return get_queried_object()->display_name;

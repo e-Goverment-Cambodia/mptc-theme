@@ -10,7 +10,7 @@
                 
                 <figure class="p-0 m-0">
                     <div class="thumbnail mb-0 mb-1 mb-sm-1 mb-lg-2">
-                      <a href="javascript:void('0');">
+                      <a href="{{ get_the_permalink() }}">
                         <div class="ratio ratio-16x9 ratio-sm-16x9 ratio-md-16x9 ratio-lg-16x9">
                           <div style="background-image: url('{{ get_the_post_thumbnail_url() }}');"></div>
                         </div>

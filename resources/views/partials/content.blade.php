@@ -10,7 +10,7 @@
     @include('partials/term-list')
     <h5 class="title mb-0 mb-1 mb-sm-1 mb-lg-2 text-break"><a href="{{ get_permalink() }}">{!! $title !!}</a></h5>
     <p class="excerpt mb-0 mb-sm-1 mb-lg-2 text-break">
-      {{ get_the_excerpt() }}
+      {{ mb_strimwidth( get_the_excerpt(), 0, 400, '...') }}
     </p>
     @include('partials/entry-meta')
   </figcaption>

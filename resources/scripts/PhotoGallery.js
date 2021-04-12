@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from "react";
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-function App() {
+export default function PhotoGallery() {
 
   const element = document.getElementById("gallery");
   const photos = JSON.parse(element.dataset.photo);
@@ -42,5 +41,3 @@ function App() {
     </div>
   );
 }
-if ( document.getElementById("gallery") )
-render(<App />, document.getElementById("gallery"));
