@@ -13,7 +13,7 @@
   @endif
   <div class="container mb-1 mb-sm-2 mb-md-3 mb-lg-4">
     @while(have_posts()) @php(the_post())
-      @include('partials.content-search')
+      @include('partials.content')
     @endwhile
   </div>
   <div class="container mb-3">

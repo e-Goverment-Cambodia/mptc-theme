@@ -2,7 +2,7 @@
 <section class="header bg-gradient1 position-relative mb-0 mb-lg-4">
   <div id="particles-js" class="d-none d-lg-block position-absolute top-0 bottom-0 start-0 end-0"></div>
   
-  <header class="container d-flex align-items-center justify-content-between px-1 px-sm-2 px-md-3 py-1 py-sm-2 py-md-3 py-lg-4 position-relative">
+  <header class="container d-flex align-items-center justify-content-between px-2 px-sm-2 px-md-3 py-2 py-sm-2 py-md-3 py-lg-4 position-relative">
     <figure class="d-flex align-items-center mb-0">
       <a 
         @if ( function_exists( 'pll_home_url' ) )
@@ -104,13 +104,13 @@
 
       <div class="mobile-toggle d-flex align-items-center d-lg-none">
         <div class="search-icon text-center me-1 me-sm-2 me-md-2 color-gray-300" data-bs-toggle="modal" data-bs-target="#searchModal">
-          <i class="icofont-search-1"></i>
+          <i class="icofont-search-1 d-block m-0"></i>
         </div>
         <div class="toggle-nav">
           <ul>
             <li></li>
             <li></li>
-            <li></li>
+            <li class="mb-0"></li>
           </ul>
         </div>
       </div>
@@ -139,7 +139,7 @@
         <form action="/" method="GET">
           <div class="input-group mb-0">
             <input name="s" type="search" class="form-control" placeholder="{{ __( 'Key Word', 'sage' ) }}" aria-label="{{ __( 'SEARCH', 'sage' ) }}" aria-describedby="button-search">
-            <button class="btn btn-outline-secondary" type="submit" id="button-search">{{ __( 'SEARCH', 'sage' ) }}</button>
+            <button class="btn btn-outline-secondary bg-gradient color-white" type="submit" id="button-search">{{ __( 'SEARCH', 'sage' ) }}</button>
           </div>
         </form>
       </div>

@@ -4,10 +4,12 @@
   @include('partials.page-header')
 
   @if (! have_posts())
-    <x-alert type="warning">
+  <div class="container mb-3">
+    <h5 class="mb-2 mb-md-3">
       {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
+    </h5>
     {!! get_search_form(false) !!}
+  </div>
   @endif
 
   @php
@@ -35,13 +37,12 @@
             <tr>
               <td>
                 {{ $i++ }}
-                
               </td>
               @include('partials.content-pdf')
             </tr>
           @endwhile
           </tbody>
-        <table class="table table-striped">
+        </table>
       </div>
       @break
     @default

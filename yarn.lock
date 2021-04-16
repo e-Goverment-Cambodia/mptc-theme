@@ -5930,7 +5930,7 @@ mpd-parser@0.15.4:
 
 mptclayout@sokmean-mptc/mptclayout:
   version "0.0.1"
-  resolved "https://codeload.github.com/sokmean-mptc/mptclayout/tar.gz/7d8c0933d599526cccc12ef80dee6eac32fcc8aa"
+  resolved "https://codeload.github.com/sokmean-mptc/mptclayout/tar.gz/618774571feebffa66d424b18d8aba0514db3b60"
   dependencies:
     "@popperjs/core" "^2.9.1"
     "@videojs/themes" "^1.0.1"

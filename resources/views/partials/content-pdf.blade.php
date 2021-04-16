@@ -8,9 +8,11 @@
       <li class="list-inline-item">
         <time datetime="{{ get_post_time('c', true) }}"><i class="icofont-clock-time"></i> {{ human_time_diff( get_the_time('U'), current_time('timestamp') )}} {{ __( ' ago', 'sage' ) }}</time>
       </li>
+      @if ( $view )
       <li class="list-inline-item">
         {!! $view !!}
       </li>
+      @endif
       @php
       $pdf = get_post_meta( get_the_ID(), '_mptc_document_file', true );
       @endphp
@@ -19,6 +21,6 @@
         <i class="icofont-cloud-download"></i> <a href="{{ $pdf }}">{{ __( 'Download', 'egov' ) }}</a>
       </li>
       @endif
-  </ul>
+    </ul>
   </div>  
 </td>

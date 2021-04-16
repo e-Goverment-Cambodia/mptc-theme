@@ -9,3 +9,8 @@
 .react-images__navigation {
     position: initial;
 }
+@include media-breakpoint-up(md) {  
+    .block-heading {
+        margin-bottom: 2rem;
+    }
+}
