@@ -15,7 +15,7 @@ class BaseController
     public $meta_key_view_count;
 
     public function __construct() {
-        $this->meta_key_view_count = 'post_view_count';
+        $this->meta_key_view_count = 'post_views_count';
     }
 
     public function formatKMG( $number ) {
@@ -37,14 +37,6 @@ class BaseController
                 $value = $number;
         }
         return $value;
-    }
-
-    public function metaKeyPostViewCount( string $meta_value_num ) {
-        $meta_key = apply_filters( 'egov_meta_value_num', $this->meta_key_view_count );
-        if( $meta_value_num === 'meta_value_num' ) {
-            return $meta_key;
-        }
-        return false;
     }
 
     public static function getTheTermList( int $post_id, array $taxonomy, string $before = '', string $sep = '', string $after = '' ) {
@@ -72,4 +64,23 @@ class BaseController
         return $before . implode( $sep, $links ) . $after;
     }
 
+    public static function formatChetraDocument( $document = '' ) {
+        $url = get_site_url();
+        $upload_url = wp_upload_dir();
+        /**
+        * ឆែកមើលបើសិន Document file អត់មានផ្ទុក home url
+        * _mptc_document_file ជា custom meta key ដែលកើតមាននៅពេល Active MPTC Field Plugin
+        * ត្រូវបន្ថែម Upload Directory ទៅកាន់ Link ជាមុន (សម្រាប់ទិន្នន័យពី Website ចាស់)
+        */
+        if(strpos($document, $url) !== false){
+            $d_link = $document;
+        }elseif(strpos($document, 'http://files') == 0){
+            $new_doc = preg_replace('#http://(files\.)?#i', '', $document);
+            $d_link = $upload_url['baseurl'].'/'. $new_doc;
+        }else{
+            $d_link = $upload_url['baseurl'].'/'. $document;
+        }
+        
+        return $d_link;
+    }
 }

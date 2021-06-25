@@ -31,7 +31,7 @@ class Post extends Composer
     }
 
     public function postViewCount() {
-        $post_view_count = get_post_meta( get_the_ID(), 'post_view_count', true );
+        $post_view_count = get_post_meta( get_the_ID(), 'post_views_count', true );
         
         if( ! $post_view_count ) {
             return 0;

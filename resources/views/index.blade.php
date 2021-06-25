@@ -19,13 +19,13 @@
   @switch( $custom_template )
     @case( 'document' )
       <div class="container mb-1 mb-sm-2 mb-md-3 mb-lg-4">
-        <table class="table table-striped">
-          <thead>
+        <table class="table table-striped1">
+          {{-- <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">{{ __( 'Title', 'egov' ) }}</th>
             </tr>
-          </thead>
+          </thead> --}}
           <tbody>
             @php
               $i = 1;
@@ -35,9 +35,9 @@
             @endphp
           @while(have_posts()) @php(the_post())
             <tr>
-              <td>
+              {{-- <td>
                 {{ $i++ }}
-              </td>
+              </td> --}}
               @include('partials.content-pdf')
             </tr>
           @endwhile
@@ -46,7 +46,7 @@
       </div>
       @break
     @default
-      <div class="container mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+      <div class="container mb-2 mb-sm-2 mb-md-3 mb-lg-4">
         @while(have_posts()) @php(the_post())
           @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
         @endwhile
