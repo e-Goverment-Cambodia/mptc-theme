@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta property="og:title" content="<?php the_title() ?>" />
-    <meta property="og:description" content="<?php echo mb_strimwidth( get_the_excerpt(), 0, 400, '...') ?>" />
+    <meta property="og:description" content="<?php the_excerpt() ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php the_permalink() ?>" />
     <meta property="og:site_name" content="<?php echo get_bloginfo('name', 'display') ?>" />

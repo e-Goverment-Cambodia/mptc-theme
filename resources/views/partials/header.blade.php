@@ -25,18 +25,20 @@
           @endif
           
           @if ( get_theme_mod( 'logo_small_setting_id' ) )                
-            <source media="(min-width: 576px)" srcset="{{ wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) }}" type="image/jpeg">
+            <source media="(max-width: 767px)" srcset="{{ wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) }}" type="image/jpeg">
+            <img src="{{ wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) }}" type="image/jpeg">
           @else
-            <source media="(min-width: 576px)" srcset="{{ get_stylesheet_directory_uri() }}/resources/images/logo@2x.png" type="image/jpeg">
+            <source media="(max-width: 767px)" srcset="{{ get_stylesheet_directory_uri() }}/resources/images/logo@2x.png" type="image/jpeg">
+            <img src="{{ get_stylesheet_directory_uri() }}/resources/images/logo@2x.png" type="image/jpeg">
           @endif
           
-          @if ( get_theme_mod( 'logo_xsmall_setting_id' ) )                
+          {{-- @if ( get_theme_mod( 'logo_xsmall_setting_id' ) )                
             <source media="(max-width: 575px)" srcset="{{ wp_get_attachment_url( get_theme_mod( 'logo_xsmall_setting_id' ) ) }}" type="image/jpeg">
             <img src="{{ wp_get_attachment_url( get_theme_mod( 'logo_xsmall_setting_id' ) ) }}" type="image/jpeg">
           @else
             <source media="(max-width: 575px)" srcset="{{ get_stylesheet_directory_uri() }}/resources/images/logo@1x.png" type="image/jpeg">
             <img src="{{ get_stylesheet_directory_uri() }}/resources/images/logo@1x.png" type="image/jpeg">
-          @endif
+          @endif --}}
         </picture>
       </a>
       <figcaption class="title">

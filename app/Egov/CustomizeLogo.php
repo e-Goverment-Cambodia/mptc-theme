@@ -131,14 +131,14 @@ class CustomizeLogo
             )
         ); 
 
-        $manager->add_setting(
-            'logo_xsmall_setting_id',
-            array(
-                'type' => 'theme_mod',
-                'capability' => 'edit_theme_options',
-                'transport' => 'refresh',
-            )
-        );
+        // $manager->add_setting(
+        //     'logo_xsmall_setting_id',
+        //     array(
+        //         'type' => 'theme_mod',
+        //         'capability' => 'edit_theme_options',
+        //         'transport' => 'refresh',
+        //     )
+        // );
         
         $manager->add_setting(
             'logo_small_setting_id',
@@ -178,20 +178,20 @@ class CustomizeLogo
             )
         );
         
-        $manager->add_control( 
-            new \WP_Customize_Cropped_Image_Control(
-                $manager,
-                'logo_xsmall_control_id', 
-                array(
-                    'width' => 36,
-                    'height' => 36,
-                    'section' => 'title_tagline',
-                    'label' => 'Site Logo',
-                    'settings' => 'logo_small_setting_id',
-                    'description' => __( '<p>Select site logos from media uploader or upload from your pc.</p>Choose each 4 image that has the same aspectratio (1:1) but different dimension size depend on responsive for mobile, tablet and desktop. <br/>1X = 36 × 36 pixels', 'sage' ),
-                )
-            )
-        );
+        // $manager->add_control( 
+        //     new \WP_Customize_Cropped_Image_Control(
+        //         $manager,
+        //         'logo_xsmall_control_id', 
+        //         array(
+        //             'width' => 36,
+        //             'height' => 36,
+        //             'section' => 'title_tagline',
+        //             'label' => 'Site Logo',
+        //             'settings' => 'logo_small_setting_id',
+        //             'description' => __( '<p>Select site logos from media uploader or upload from your pc.</p>Choose each 4 image that has the same aspectratio (1:1) but different dimension size depend on responsive for mobile, tablet and desktop. <br/>1X = 36 × 36 pixels', 'sage' ),
+        //         )
+        //     )
+        // );
 
         $manager->add_control( 
             new \WP_Customize_Cropped_Image_Control(
@@ -202,7 +202,7 @@ class CustomizeLogo
                     'height' => 40,
                     'section' => 'title_tagline',
                     'settings' => 'logo_small_setting_id',
-                    'description' => __( '2X = 40 × 40 pixels', 'sage' ),
+                    'description' => __( '40 × 40 pixels', 'sage' ),
                 )
             )
         );
@@ -216,7 +216,7 @@ class CustomizeLogo
                     'height' => 60,
                     'section' => 'title_tagline',
                     'settings' => 'logo_medium_setting_id',
-                    'description' => __( '3X = 60 × 60 pixels', 'sage' ),
+                    'description' => __( '60 × 60 pixels', 'sage' ),
                 )
             )
         );
@@ -230,7 +230,7 @@ class CustomizeLogo
                     'height' => 110,
                     'section' => 'title_tagline',
                     'settings' => 'logo_large_setting_id',
-                    'description' => __( '3X = 110 × 110 pixels', 'sage' ),
+                    'description' => __( '110 × 110 pixels', 'sage' ),
                 )
             )
         );

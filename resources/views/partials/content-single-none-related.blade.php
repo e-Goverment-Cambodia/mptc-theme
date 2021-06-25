@@ -12,11 +12,7 @@
   @include('partials.pdf')
 
   <div class="entry-content mb-3 mb-lg-4">
-    {!! get_the_content() !!}
+    @php(the_content())
   </div>
-
-  <div class="block-title mb-2 mb-sm-2 mb-md-3 mb-lg-4">
-    <h2>{{ __("Related Posts","sage") }}</h2>
-  </div>
-  @include('partials.related-posts')
+  
 </article>
