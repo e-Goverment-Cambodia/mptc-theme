@@ -21,7 +21,8 @@ final class Init
             Egov\CMB2::class,
             Egov\CustomizeLogo::class,
             Egov\RegisterNavMenu::class,
-            Egov\PostViewCount::class
+            Egov\PostViewCount::class,
+            Egov\RegisterWidget::class
         ];
     }
 

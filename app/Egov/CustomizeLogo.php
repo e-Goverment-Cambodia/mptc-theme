@@ -130,15 +130,6 @@ class CustomizeLogo
                 'description_hidden' => false
             )
         ); 
-
-        // $manager->add_setting(
-        //     'logo_xsmall_setting_id',
-        //     array(
-        //         'type' => 'theme_mod',
-        //         'capability' => 'edit_theme_options',
-        //         'transport' => 'refresh',
-        //     )
-        // );
         
         $manager->add_setting(
             'logo_small_setting_id',
@@ -178,21 +169,27 @@ class CustomizeLogo
             )
         );
         
-        // $manager->add_control( 
-        //     new \WP_Customize_Cropped_Image_Control(
-        //         $manager,
-        //         'logo_xsmall_control_id', 
-        //         array(
-        //             'width' => 36,
-        //             'height' => 36,
-        //             'section' => 'title_tagline',
-        //             'label' => 'Site Logo',
-        //             'settings' => 'logo_small_setting_id',
-        //             'description' => __( '<p>Select site logos from media uploader or upload from your pc.</p>Choose each 4 image that has the same aspectratio (1:1) but different dimension size depend on responsive for mobile, tablet and desktop. <br/>1X = 36 × 36 pixels', 'sage' ),
-        //         )
-        //     )
-        // );
-
+        $manager->add_setting(
+            'theme_color_secondary_setting',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'default' => '#0956AE',
+                'sanitize_callback' => 'sanitize_hex_color'
+            )
+        );
+        
+        $manager->add_setting(
+            'khmer_font_setting',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'default'    => 'Koh-Santepheap',
+            )
+        );
+        
         $manager->add_control( 
             new \WP_Customize_Cropped_Image_Control(
                 $manager,
@@ -242,9 +239,37 @@ class CustomizeLogo
                 array(
                     'section' => 'title_tagline',
                     'settings' => 'theme_color_setting',
-                    'label'      => __( 'Theme Color', 'sage' )
+                    'label'      => __( 'Primary Color', 'sage' )
                 )
             )
         );
+
+        $manager->add_control( 
+            new \WP_Customize_Color_Control(
+                $manager,
+                'color_control_secondary', 
+                array(
+                    'section' => 'title_tagline',
+                    'settings' => 'theme_color_secondary_setting',
+                    'label'      => __( 'Secondary Color', 'sage' )
+                )
+            )
+        );
+        
+        $manager->add_control( 
+            new \WP_Customize_Control(
+            $manager,
+            'khmer_font_control', 
+            array(
+               'label'      => __( 'Khmer Font', 'sage' ),
+               'settings'   => 'khmer_font_setting',
+               'section'    => 'title_tagline',
+               'type'    => 'select',
+               'choices' => array(
+                   'Koh-Santepheap' => 'Koh-Santepheap',
+                   'Kantumruy' => 'Kantumruy'
+               )
+           )
+           ) );
     }    
 }

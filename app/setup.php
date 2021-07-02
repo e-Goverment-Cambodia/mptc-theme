@@ -178,17 +178,27 @@ add_action('after_setup_theme', function () {
  * @return void
  */
 add_action('widgets_init', function () {
-    $config = [
-        'before_widget' => '<small>',
-        'after_widget' => '</small>',
-        'before_title' => '<h3 class="d-none">',
-        'after_title' => '</h3>'
-    ];
 
-    register_sidebar([
-        'name' => __('CopyRight', 'sage'),
-        'id' => 'copyright'
-    ] + $config);
+    register_sidebar(
+        [
+            'name' => __('Header', 'sage'),
+            'id' => 'header',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3 class="d-none">',
+            'after_title' => '</h3>'
+        ] 
+    );
+    register_sidebar(
+        [
+            'name' => __('CopyRight', 'sage'),
+            'id' => 'copyright',
+            'before_widget' => '<small>',
+            'after_widget' => '</small>',
+            'before_title' => '<h3 class="d-none">',
+            'after_title' => '</h3>'
+        ]
+    );
 });
 
 add_action('after_setup_theme', function () {
