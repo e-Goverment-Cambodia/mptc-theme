@@ -139,6 +139,15 @@ class CustomizeLogo
                 'transport' => 'refresh',
             )
         );
+        
+        $manager->add_setting(
+            'logo_small_setting_2x_id',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+            )
+        );
 
         $manager->add_setting(
             'logo_medium_setting_id',
@@ -150,7 +159,25 @@ class CustomizeLogo
         );
         
         $manager->add_setting(
+            'logo_medium_setting_2x_id',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+            )
+        );
+        
+        $manager->add_setting(
             'logo_large_setting_id',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+            )
+        );
+        
+        $manager->add_setting(
+            'logo_large_setting_2x_id',
             array(
                 'type' => 'theme_mod',
                 'capability' => 'edit_theme_options',
@@ -195,11 +222,25 @@ class CustomizeLogo
                 $manager,
                 'logo_small_control_id', 
                 array(
-                    'width' => 40,
-                    'height' => 40,
+                    'width' => 50,
+                    'height' => 50,
                     'section' => 'title_tagline',
                     'settings' => 'logo_small_setting_id',
-                    'description' => __( '40 × 40 pixels', 'sage' ),
+                    'description' => __( '50 × 50 pixels', 'sage' ),
+                )
+            )
+        );
+        
+        $manager->add_control( 
+            new \WP_Customize_Cropped_Image_Control(
+                $manager,
+                'logo_small_control_2x_id', 
+                array(
+                    'width' => 100,
+                    'height' => 100,
+                    'section' => 'title_tagline',
+                    'settings' => 'logo_small_setting_2x_id',
+                    'description' => __( '100 × 100 pixels', 'sage' ),
                 )
             )
         );
@@ -217,6 +258,20 @@ class CustomizeLogo
                 )
             )
         );
+        
+        $manager->add_control( 
+            new \WP_Customize_Cropped_Image_Control(
+                $manager,
+                'logo_medium_control_2x_id', 
+                array(
+                    'width' => 120,
+                    'height' => 120,
+                    'section' => 'title_tagline',
+                    'settings' => 'logo_medium_setting_2x_id',
+                    'description' => __( '120 × 120 pixels', 'sage' ),
+                )
+            )
+        );
 
         $manager->add_control( 
             new \WP_Customize_Cropped_Image_Control(
@@ -228,6 +283,20 @@ class CustomizeLogo
                     'section' => 'title_tagline',
                     'settings' => 'logo_large_setting_id',
                     'description' => __( '110 × 110 pixels', 'sage' ),
+                )
+            )
+        );
+        
+        $manager->add_control( 
+            new \WP_Customize_Cropped_Image_Control(
+                $manager,
+                'logo_large_control_2x_id', 
+                array(
+                    'width' => 220,
+                    'height' => 220,
+                    'section' => 'title_tagline',
+                    'settings' => 'logo_large_setting_2x_id',
+                    'description' => __( '220 × 220 pixels', 'sage' ),
                 )
             )
         );

@@ -41,10 +41,18 @@ class BaseController
 
     public static function getTheTermList( int $post_id, array $taxonomy, string $before = '', string $sep = '', string $after = '' ) {
 
-        $terms = wp_get_post_terms( $post_id, $taxonomy );
+        // Determines whether the taxonomy name exists.
+        $exist_tax = [];
+        foreach( $taxonomy as $tax ) {
+            if ( taxonomy_exists( $tax ) ) {
+                array_push( $exist_tax, $tax );
+            }
+        }
+
+        $terms = wp_get_post_terms( $post_id, $exist_tax );
  
         if ( is_wp_error( $terms ) ) {
-            return $terms;
+            return;
         }
     
         if ( empty( $terms ) ) {

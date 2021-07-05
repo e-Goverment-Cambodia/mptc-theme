@@ -24,7 +24,7 @@ class HeaderTwo extends \WP_Widget
             <div id="particles-js" class="d-none"></div>
             <header class="container d-flex align-items-center justify-content-between px-2 px-sm-2 px-md-3 py-2 py-sm-2 py-md-3 py-lg-4 position-relative">
                 <figure class="d-flex align-items-center mb-0">
-                    <a 
+                <a 
                         <?php
                         if ( function_exists( 'pll_home_url' ) ) :
                         ?>
@@ -39,26 +39,49 @@ class HeaderTwo extends \WP_Widget
                         endif
                         ?>
                     >
-                        <picture class="me-1 me-sm-2 me-md-3 me-lg-4">
-                            <?php if ( get_theme_mod( 'logo_large_setting_id' ) ) : ?>          
-                                <source media="(min-width: 992px)" srcset="<?php echo wp_get_attachment_url( get_theme_mod( 'logo_large_setting_id' ) ) ?>" type="image/jpeg">
-                            <?php else : ?>
-                                <source media="(min-width: 992px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/resources/images/logo@4x.png" type="image/jpeg">
-                            <?php endif ?>
+                        <?php
+                            $base = get_stylesheet_directory_uri() . "/resources/images/";
                             
-                            <?php if ( get_theme_mod( 'logo_medium_setting_id' ) ) : ?>
-                                <source media="(min-width: 768px)" srcset="<?php echo wp_get_attachment_url( get_theme_mod( 'logo_medium_setting_id' ) ) ?>" type="image/jpeg">
-                            <?php else : ?>
-                                <source media="(min-width: 768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/resources/images/logo@3x.png" type="image/jpeg">
-                            <?php endif ?>
+                            $large_logo = $base . "LargeLogo.png";
+                            $large_logo_2x = $base . "LargeLogo@2x.png";
+
+                            $medium_logo = $base . "MediumLogo.png";
+                            $medium_logo_2x = $base . "MediumLogo@2x.png";
+
+                            $small_logo = $base . "SmallLogo.png";
+                            $small_logo_2x = $base . "SmallLogo@2x.png";
+
+                            if ( get_theme_mod( 'logo_large_setting_id' ) && get_theme_mod( 'logo_large_setting_2x_id' ) ) {
+                                $large_logo = wp_get_attachment_url( get_theme_mod( 'logo_large_setting_id' ) );
+                                $large_logo_2x = wp_get_attachment_url( get_theme_mod( 'logo_large_setting_2x_id' ) );
+                            }
+
+                            if ( get_theme_mod( 'logo_medium_setting_id' ) && get_theme_mod( 'logo_medium_setting_2x_id' ) ) {
+                                $medium_logo = wp_get_attachment_url( get_theme_mod( 'logo_medium_setting_id' ) );
+                                $medium_logo_2x = wp_get_attachment_url( get_theme_mod( 'logo_medium_setting_2x_id' ) );
+                            }
                             
-                            <?php if ( get_theme_mod( 'logo_small_setting_id' ) ) : ?>
-                                <source media="(max-width: 767px)" srcset="<?php echo wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) ?>" type="image/jpeg">
-                                <img src="<?php echo wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) ) ?>" type="image/jpeg">
-                            <?php else : ?>
-                                <source media="(max-width: 767px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/resources/images/logo@2x.png" type="image/jpeg">
-                                <img src="<?php echo get_stylesheet_directory_uri() ?>/resources/images/logo@2x.png" type="image/jpeg">
-                            <?php endif ?>
+                            if ( get_theme_mod( 'logo_small_setting_id' ) && get_theme_mod( 'logo_small_setting_2x_id' ) ) {
+                                $small_logo = wp_get_attachment_url( get_theme_mod( 'logo_small_setting_id' ) );
+                                $small_logo_2x = wp_get_attachment_url( get_theme_mod( 'logo_small_setting_2x_id' ) );
+                            }
+                        ?>
+                        <picture class="me-1 me-sm-2 me-md-3 me-lg-4 d-block">
+                            <source media="(min-width: 992px)" 
+                                srcset="<?php echo $large_logo . ' 1x, '. $large_logo_2x . ' 2x'; ?>" 
+                                type="image/jpeg"
+                            >
+                            
+                            <source media="(min-width: 768px)" 
+                                srcset="<?php echo $medium_logo . ' 1x, '. $medium_logo_2x . ' 2x'; ?>"
+                                type="image/jpeg"
+                            >
+                            
+                            <img 
+                                src="<?php echo $small_logo; ?>"
+                                srcset="<?php echo $small_logo_2x . ' 2x'; ?>"
+                                type="image/jpeg"   
+                            >
                         </picture>
                     </a>
                     <figcaption class="title">
