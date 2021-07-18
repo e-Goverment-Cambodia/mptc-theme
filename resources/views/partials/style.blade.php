@@ -29,6 +29,6 @@
         --bs-dark: #212529;
         --bs-font-sans-serif: "Open Sans", Helvetica, "{!! $font !!}", sans-serif;
         --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        --bs-gradient: linear-gradient(45deg, {!! $primary !!}b5, {!! $primary !!});
+        --bs-gradient: linear-gradient(45deg, {!! $primary !!}a1, {!! $primary !!});
     }
 </style>

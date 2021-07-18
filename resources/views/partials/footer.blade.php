@@ -23,7 +23,7 @@
                     <div class="dropdown-active d-flex" id="dropdownLanguageFooter" data-bs-toggle="dropdown" aria-expanded="false">
                       <figure class="mb-0 text-center me-1">
                         <img src="{{ get_stylesheet_directory_uri() }}/resources/images/{{ $value['slug'] }}.png" alt="{{ $value['name'] }}">
-                        <figcaption>{{ $value['name'] }}</figcaption>
+                        {{-- <figcaption>{{ $value['name'] }}</figcaption> --}}
                       </figure>
                       <div class="align-middle">
                         <i class="icofont-simple-up"></i>

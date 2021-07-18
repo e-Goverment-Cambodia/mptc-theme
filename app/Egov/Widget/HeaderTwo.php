@@ -96,7 +96,7 @@ class HeaderTwo extends \WP_Widget
                             wp_nav_menu( [
                                 'theme_location' => 'social_menu',
                                 'container' => 'ul',
-                                'menu_class' => false
+                                'menu_class' => 'd-flex'
 
                             ] );
                         endif

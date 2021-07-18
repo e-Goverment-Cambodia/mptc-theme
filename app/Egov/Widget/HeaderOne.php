@@ -89,14 +89,14 @@ class HeaderOne extends \WP_Widget
                         <div class="tagline"><?php echo get_bloginfo( 'description', 'display' ) ?></div>
                     </figcaption>
                 </figure>
-                <div class="d-flex">
+                <div class="d-flex align-items-center">
                     <nav class="social d-none d-lg-block">
                         <?php
                         if ( has_nav_menu( 'social_menu' ) ) :
                             wp_nav_menu( [
                                 'theme_location' => 'social_menu',
                                 'container' => 'ul',
-                                'menu_class' => false
+                                'menu_class' => 'd-flex'
 
                             ] );
                         endif
@@ -104,7 +104,7 @@ class HeaderOne extends \WP_Widget
                     </nav>
                     <div class="d-none d-lg-block search-icon text-center me-3 color-gray-500" data-bs-toggle="modal" data-bs-target="#searchModal">
                         <i class="icofont-search-1"></i>
-                        <div class="caption"><?php echo __( 'SEARCH', 'sage' ) ?></div>
+                        <div class="caption"><?php //echo __( 'SEARCH', 'sage' ) ?></div>
                     </div>
 
                     <?php if( function_exists( 'pll_the_languages' ) ) : ?>
@@ -120,7 +120,7 @@ class HeaderOne extends \WP_Widget
                             <div class="dropdown-active d-flex" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                                 <figure class="mb-0 text-center me-1">
                                     <img class="mb-0" src="<?php echo get_stylesheet_directory_uri() ?>/resources/images/<?php echo $value['slug'] ?>.png" alt="<?php echo $value['name'] ?>">
-                                    <figcaption><?php echo $value['name'] ?></figcaption>
+                                    <figcaption><?php //echo $value['name'] ?></figcaption>
                                 </figure>
                                 <div class="align-middle">
                                     <i class="icofont-simple-down"></i>
