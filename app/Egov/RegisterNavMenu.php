@@ -22,7 +22,8 @@ class RegisterNavMenu extends BaseController
         $args = [
             'social_menu' => __( 'Social Menu', 'sage' ),
             'main_menu' => __( 'Main Menu', 'sage' ),
-            'footer_menu' => __( 'Footer Menu', 'sage' )
+            'footer_menu' => __( 'Footer Menu', 'sage' ),
+            'top_menu' => __( 'Top Menu', 'sage' )
         ];
         register_nav_menus( $args );
     }    

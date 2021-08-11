@@ -8,6 +8,7 @@ namespace App\Egov;
 use App\Base\BaseController;
 use App\Egov\Widget\HeaderOne;
 use App\Egov\Widget\HeaderTwo;
+use App\Egov\Widget\HeaderThree;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,6 +25,7 @@ class RegisterWidget extends BaseController
     public function registerWidget() {
         register_widget( new HeaderOne );
         register_widget( new HeaderTwo );
+        register_widget( new HeaderThree );
     }   
      
 }
