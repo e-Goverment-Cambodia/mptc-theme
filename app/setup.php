@@ -15,7 +15,7 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), ['jquery'], null, true);
-    wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js'], null, true);
+    wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-element'], null, true);
 
     wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
 
@@ -189,16 +189,16 @@ add_action('widgets_init', function () {
             'after_title' => '</h3>'
         ] 
     );
-    register_sidebar(
-        [
-            'name' => __('CopyRight', 'sage'),
-            'id' => 'copyright',
-            'before_widget' => '<small>',
-            'after_widget' => '</small>',
-            'before_title' => '<h3 class="d-none">',
-            'after_title' => '</h3>'
-        ]
-    );
+    // register_sidebar(
+    //     [
+    //         'name' => __('CopyRight', 'sage'),
+    //         'id' => 'copyright',
+    //         'before_widget' => '<small>',
+    //         'after_widget' => '</small>',
+    //         'before_title' => '<h3 class="d-none">',
+    //         'after_title' => '</h3>'
+    //     ]
+    // );
     register_sidebar(
         [
             'name' => __('Footer', 'sage'),
