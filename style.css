@@ -1,14 +1,15 @@
 /*
-Theme Name:         MPTC Theme
-Theme URI:          https://github.com/sokmean-mptc/MPTLayout
-Description:        A WordPress theme fork from roots/sage.
-Version:            0.0.1
-Author:             sokmean-mptc
-Author URI:         https://github.com/sokmean-mptc
-Text Domain:        sage
-Domain Path:        /resources/lang
-License:            MIT License
-License URI:        https://opensource.org/licenses/MIT
-Requires PHP:       7.3
-Requires at least:  5.4
+Theme Name:		MPTC THEME
+Theme URI:		https://github.com/sokmean-mptc/mptc-theme
+Author:			Sokmean
+Author URI:		http://sokmean.com
+Description:	A WordPress Theme
+Version:		1.0.0
+Tested up to:	5.4
+Requires PHP:	5.6
+License:		MIT License
+License URI:	https://opensource.org/licenses/MIT
+Text Domain:	mptc
+Domain Path:	/resources/lang
+Tags:			custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
