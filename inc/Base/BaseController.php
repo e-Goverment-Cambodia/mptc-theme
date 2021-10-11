@@ -116,4 +116,19 @@ class BaseController
     
         return $before . implode( $sep, $links ) . $after;
     }
+
+    public function getPostOption( array $para ) {
+        
+        $options = get_post_meta( $para['pid'], $para['option'], true );
+        if ( $options ) {
+            foreach ( $options as $key => $value ) {
+                if( $value === $para['key'] ) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+
+    }
 }

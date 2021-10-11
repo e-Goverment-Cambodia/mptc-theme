@@ -32,8 +32,8 @@ class CMB2 extends BaseController
             'id'        => $prefix . 'category_template',
             'type'      => 'radio_inline',
             'options'	=> [
-                'default'	=> __( 'Default' ), 
-                'document'	=> __( 'Document' ),
+                'default'	=> 'Default', 
+                'document'	=> 'Document',
             ],
             'default'	=> 'default'
         ]);

@@ -9,6 +9,7 @@
  * @package MPTC_THEME
  */
 
+use App\Base\BaseController;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -22,7 +23,18 @@
 
 <body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#menu-tab" data-bs-offset="10">
 <?php wp_body_open(); ?>
-<?php dynamic_sidebar( 'header' ); ?>
+
+<?php 
+    $arg = [
+        'pid' => get_the_ID(),
+        'option' => 'post_option_multicheck',
+        'key' => 'header'
+    ];
+    $base = new BaseController;
+    if( $base->getPostOption( $arg ) ) {
+        dynamic_sidebar( 'header' ); 
+    }
+?>
 
 <!-- Search Modal -->
 <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,6 +55,7 @@
 <?php
     $primary = get_theme_mod( 'theme_color_setting' ) ?: '#0956AE';
     $secondary = get_theme_mod( 'theme_color_secondary_setting' ) ?: '#0956AE';
+    $highlight = get_theme_mod( 'theme_color_highlight_setting' ) ?: '#f07d03';
     $font = get_theme_mod( 'khmer_font_setting' ) ?: 'Koh-Santepheap';
 ?>
 
@@ -63,6 +76,7 @@
         --bs-gray-dark: #343a40;
         --bs-primary: <?php echo $primary ?>;
         --bs-secondary: <?php echo $secondary ?>;
+        --highlight: <?php echo $highlight ?>;
         --bs-success: #198754;
         --bs-info: #0dcaf0;
         --bs-warning: #ffc107;

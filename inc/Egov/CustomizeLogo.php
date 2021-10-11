@@ -208,6 +208,17 @@ class CustomizeLogo
         );
         
         $manager->add_setting(
+            'theme_color_highlight_setting',
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'default' => '#f07d03',
+                'sanitize_callback' => 'sanitize_hex_color'
+            )
+        );
+        
+        $manager->add_setting(
             'khmer_font_setting',
             array(
                 'type' => 'theme_mod',
@@ -321,6 +332,18 @@ class CustomizeLogo
                     'section' => 'title_tagline',
                     'settings' => 'theme_color_secondary_setting',
                     'label'      => 'Secondary Color'
+                )
+            )
+        );
+        
+        $manager->add_control( 
+            new \WP_Customize_Color_Control(
+                $manager,
+                'color_control_highlight', 
+                array(
+                    'section' => 'title_tagline',
+                    'settings' => 'theme_color_highlight_setting',
+                    'label'      => 'Highlight Color'
                 )
             )
         );

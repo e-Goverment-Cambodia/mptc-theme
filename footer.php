@@ -9,9 +9,19 @@
  * @package MPTC_THEME
  */
 
+use App\Base\BaseController;
+?>
 
-dynamic_sidebar( 'footer' );
-
+<?php 
+    $arg = [
+        'pid' => get_the_ID(),
+        'option' => 'post_option_multicheck',
+        'key' => 'footer'
+    ];
+    $base = new BaseController;
+    if( $base->getPostOption( $arg ) ) {
+        dynamic_sidebar( 'footer' ); 
+    }
 ?>
 
 <?php wp_footer(); ?>
