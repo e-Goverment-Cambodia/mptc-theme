@@ -31,7 +31,7 @@ $pid = get_the_ID();
 	
 	<?php get_template_part( 'template-parts/components/pdf-view' ); ?>
 	
-	<div class="entry-content mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+	<div class="entry-content mb-1 mb-sm-2 mb-md-3 mb-lg-4 mt-3">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 

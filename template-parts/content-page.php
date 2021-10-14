@@ -6,7 +6,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+	<header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4 mt-3">
 		<div class="block-title mb-1 mb-sm-2">
 			<h2><?php the_title() ?></h2>
 		</div>

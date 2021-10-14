@@ -12,15 +12,15 @@ $terms = $instant->getTermList( get_the_ID(), ['organization_type', 'sector'], '
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4">
 		<?php echo $terms; ?>
-		<div class="block-title mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+		<div class="block-title mb-1 mb-sm-2 mb-md-3 mb-lg-4 mt-3">
 			<h2><?php the_title() ?></h2>
 		</div>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<div class="addthis_inline_share_toolbox_vjl2 mb-2 mb-md-4"></div>
 	</header>
 	
-	
 	<div class="entry-content mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+	
 	<div class="">
 
 		<?php if ( get_post_meta( get_the_id(), 'cam_portal_dept_address', true ) ) : ?>

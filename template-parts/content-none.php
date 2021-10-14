@@ -7,7 +7,7 @@
 
 <section class="no-results not-found">
 	
-	<header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+	<header class="mb-1 mb-sm-2 mb-md-3 mb-lg-4 mt-3">
 		<div class="block-title mb-1 mb-sm-2">
 			<h2><?php esc_html_e( 'Nothing Found' ); ?></h2>
 		</div>
