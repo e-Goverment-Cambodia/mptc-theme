@@ -26,7 +26,6 @@ final class Init
             Egov\PostViewCount::class,
             Egov\RegisterWidget::class,
             Egov\RegisterSidebar::class,
-            // Egov\JetPack::class,
             Egov\PostOption::class
         ];
     }

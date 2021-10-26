@@ -15,7 +15,7 @@ class BaseController
     public $meta_key_view_count;
 
     public function __construct() {
-        $this->meta_key_view_count = 'post_views_count';
+        $this->meta_key_view_count = apply_filters( 'mptc_post_views_count', 'post_views_count' );
     }
 
     public function formatKMG( $number ) {
@@ -60,7 +60,7 @@ class BaseController
     }
 
     public function postViewCount() {
-        $post_view_count = get_post_meta( get_the_ID(), 'post_views_count', true );
+        $post_view_count = get_post_meta( get_the_ID(), $this->meta_key_view_count, true );
         
         if( ! $post_view_count ) {
             return 0;
