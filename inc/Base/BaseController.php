@@ -13,9 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class BaseController
 {
     public $meta_key_view_count;
+    public $meta_key_document_file;
 
     public function __construct() {
         $this->meta_key_view_count = apply_filters( 'mptc_post_views_count', 'post_views_count' );
+        $this->meta_key_document_file = apply_filters( 'mptc_document_file', '_mptc_document_file' );
     }
 
     public function formatKMG( $number ) {
@@ -39,7 +41,7 @@ class BaseController
         return $value;
     }
 
-    public static function formatChetraDocument( $document = '' ) {
+    public function formatChetraDocument( $document = '' ) {
         $url = get_site_url();
         $upload_url = wp_upload_dir();
         /**
